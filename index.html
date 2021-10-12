@@ -1,160 +1,47 @@
 <html>
 	<head>
-		<title>
-		Note Caliculation
-		</title>
-		<style type="text/css">  
-         body {  
-               background-color: linen;  
-              }    
-</style>
 	</head>
-	<body>
-		<body>
-        <center><h1>(రుణ) లెక్కింపు పేజీకి స్వాగతం!!</h1></center>
-        <hr>
-    <table align="center" cellspacing="30">
-        <tr>
-        <td>
-        <input type="number" id="pdate"><br>
-                            <h4>  గత సంవత్సరం తేదీని నమోదు చేయండి</h4></td>
-        <td><input type="number" id="pmonth"><br>
-                              <h4> గత సంవత్సరం నెలను నమోదు చేయండి</h4></td>
-        <td><input type="number" id="pyear"><br>
-                                 <h4>గత సంవత్సర సంవత్సరాన్ని నమోదు చేయండి</h4></td>
-        </td>
-        </tr>
-        <tr>
-        <td>
-        <input type="number" id="datep"><br>
-                                 <h4>ప్రస్తుత సంవత్సరం తేదీని నమోదు చేయండి</h4></td>
-        <td>
-        <input type="number" id="monthp"><br>
-                                   <h4> ప్రస్తుత సంవత్సరం నెలను నమోదు చేయండి</h4></td>
-         <td>
-         <input type="number" id="yearp"><br>
-                                     <h4>ప్రస్తుత సంవత్సర సంవత్సరాన్ని నమోదు చేయండి</h4></td>
-        </tr>
-        </table>
-        <table align="center" cellspacing="30">
+	<body style="background-color: linen;">
+		<table align="center">
+			<caption><h1 style="color:#A0522D">వాహన ఛార్జీలు</h1></caption>
 			<tr>
-				<td>
-					<input type="number" id="principle"><br>
-					<h4>తీసుకున్న ప్రిన్సిపల్ మొత్తాన్ని నమోదు చేయండి</h4>
-				</td>
-				<td>
-					<input type="number" id="intrest"><br>
-					<h4>ఇంట్రెస్ట్ రేట్ నమోదు చేయండి</h4>
-				</td>
-			</tr>
-		</table>
-        <center><input type="button" value="కాలిక్యులేట్ చేయు" onclick="f()"onmouseover="blue"style="background-color:rgb(255, 99, 71); width: 20%; height: 30px;"></center><br><br><br>
-		<table border="1" cellspacing="8" align="center" cellpadding="20">
-			<caption><h2>క్రమాంకనం చేయబడిన విలువలు<h2></caption>
-			<tr>
-				<td><h3>మొత్తం సంవత్సరాలు</h3></td>
-				<td><h2 id="1"></h2></h3><td>
+				<td><h4>ప్రయాణించడానికి దూరాన్ని నమోదు చేయండి</h4></td>
+				<td><input type="number" id="d"></td>
 			</tr>
 			<tr>
-				<td><h3>మొత్తం నెలలు</h3></td>
-				<td><h2 id="2"></h2></h3><td>
+				<td><h4>లీటరుకు డీజిల్ ధర</h4></td>
+				<td><input type="number" id="p"></td>
 			</tr>
 			<tr>
-				<td><h3>మొత్తం రోజులు</h3></td>
-				<td><h2 id="3"></h2></h3><td>
+				<td><h4>మైలేజీని నమోదు చేయండి</h4></td>
+				<td><input type="number" id="m"></td>
 			</tr>
 			<tr>
-				<td><h3>రోజుకు వడ్డి</h3></td>
-				<td><h2 id="4"></h2></h3><td>
+				<td><h4>ఇతర ఛార్జీలను నమోదు చేయండి</h4></td>
+				<td><input type="number" id="o"></td>
 			</tr>
+		</table><br>
+		<center><input type="button" value="కాలిక్యులేట్ చేయు" onclick="f1()"style="background-color:rgb(255, 99, 71); width: 20%; height: 30px;"></center><br><br>
+		<table align="center">
 			<tr>
-				<td><h3>ఒక నెల వడ్డి</h3></td>
-				<td><h2 id="5"></h2></h3><td>
-			</tr>
-			<tr>
-				<td><h3>రొజులికి వడ్డి</h3></td>
-				<td><h2 id="6"></h2></h3><td>
-			</tr>
-			<tr>
-				<td><h3>మొత్తం వడ్డి</h3></td>
-				<td><h2 id="7"></h2></h3><td>
-			</tr>
-			<tr>
-				<td><h3>మొత్తం  చెల్లించాల్సిన డబ్బు</h3></td>
-				<td><h2 id="8"></h2></h3><td>
+				<caption><h3>మొత్తం ఖర్చు</h3></caption>
+				<td><h1 id="1" style="color:#008080;"></h1></td>
 			</tr>
 		</table>
 		<script type="text/javascript">
-			function f()
-		{
-			var datesp=document.getElementById("datep").value;
-			var a=parseInt(datesp);
-			var monthsp=document.getElementById("monthp").value;
-			var b=parseInt(monthsp);
-			var yearsp=document.getElementById("yearp").value;
-			var c=parseInt(yearsp);
-			var pdates=document.getElementById("pdate").value;
-			var x=parseInt(pdates);
-			var pmonths=document.getElementById("pmonth").value;
-			var y=parseInt(pmonths);
-			var pyears=document.getElementById("pyear").value;
-			var z=parseInt(pyears);
-			var pprinciple=document.getElementById("principle").value;
-			var p=parseInt(pprinciple);
-			var pintrest=document.getElementById("intrest").value;
-			var i=parseInt(pintrest);
-			if(x>a)
-			{
-				b=b-1;
-                a=a+30;
-                days=a-x;
-				if(y>b)
-				{
-                  c=c-1;
-                  b=b+12;
-                  months=b-y;
-                  years=c-z;
-				}
-				else
-				{
-                    months=b-y;
-                    years=c-z;
-				}
+		function f1(){
+			var a=document.getElementById("d").value;
+			var x=parseInt(a);
+			var b=document.getElementById("p").value;
+			var y=parseInt(b);
+			var c=document.getElementById("m").value;
+			var z=parseInt(c);
+			var e=document.getElementById("o").value;
+			var n=parseInt(e);
+			var pn=x/z;
+			var Totals=pn*y+n;
+			document.getElementById("1").innerHTML=Totals;
 			}
-			else
-			{
-				var days=a-x;
-				if(y>b)
-				{
-					c=c-1;
-					b=b+12;
-					months=b-y;
-					years=c-z;
-				}
-				else
-				{
-					months=b-y;
-					years=c-z;
-				}
-			}
-			var ye=years;
-			var me=months;
-			years=years*12;
-			months=months+years;
-			var r=((p/100)*i);
-			var d=(r/30);
-			var Loan=((r*months)+(days*d));
-			var cd=d*days;
-			var Total=Loan+p;
-			document.getElementById("1").innerHTML=ye;
-			document.getElementById("2").innerHTML=me;
-			document.getElementById("3").innerHTML=days;
-			document.getElementById("4").innerHTML=d;
-			document.getElementById("5").innerHTML=r;
-			document.getElementById("6").innerHTML=cd;
-			document.getElementById("7").innerHTML=Loan;
-			document.getElementById("8").innerHTML=Total;
-		}
 		</script>
 		<hr>
         <table align="right" cellspacing="0" cellpadding="1">
